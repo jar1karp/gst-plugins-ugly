@@ -52,6 +52,12 @@ else
 SIDPLAY_DIR =
 endif
 
+if USE_SIDPLAYFP
+SIDPLAYFP_DIR = siddecfp
+else
+SIDPLAYFP_DIR =
+endif
+
 if USE_TWOLAME
 TWOLAME_DIR = twolame
 else
@@ -74,6 +80,7 @@ SUBDIRS = \
 	$(MAD_DIR) \
 	$(MPEG2DEC_DIR) \
 	$(SIDPLAY_DIR) \
+	$(SIDPLAYFP_DIR) \
 	$(TWOLAME_DIR) \
 	$(X264_DIR)
 
@@ -87,6 +94,7 @@ DIST_SUBDIRS = \
 	mad \
 	mpeg2dec \
 	sidplay \
+	siddecfp \
 	twolame \
 	x264
 

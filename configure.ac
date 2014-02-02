@@ -355,6 +355,12 @@ AG_GST_CHECK_FEATURE(SIDPLAY, [libsidplay], sid, [
   GST_PATH_SIDPLAY()
 ])
 
+dnl *** siddecfp : works with libsidplayfp 1.1.0 ***
+translit(dnm, m, l) AM_CONDITIONAL(USE_SIDPLAYFP, true)
+AG_GST_CHECK_FEATURE(SIDPLAYFP, [libsidplayfp], siddecfp, [
+  AG_GST_PKG_CHECK_MODULES(SIDPLAYFP, libsidplayfp >= 1.1.0)
+])
+
 dnl *** twolame ***
 translit(dnm, m, l) AM_CONDITIONAL(USE_TWOLAME, true)
 AG_GST_CHECK_FEATURE(TWOLAME, [twolame], twolame, [
@@ -386,6 +392,7 @@ AM_CONDITIONAL(USE_LAME, false)
 AM_CONDITIONAL(USE_MAD, false)
 AM_CONDITIONAL(USE_MPEG2DEC, false)
 AM_CONDITIONAL(USE_SIDPLAY, false)
+AM_CONDITIONAL(USE_SIDPLAYFP, false)
 AM_CONDITIONAL(USE_TWOLAME, false)
 AM_CONDITIONAL(USE_X264, false)
 
@@ -467,6 +474,7 @@ ext/lame/Makefile
 ext/mad/Makefile
 ext/mpeg2dec/Makefile
 ext/sidplay/Makefile
+ext/siddecfp/Makefile
 ext/twolame/Makefile
 ext/x264/Makefile
 docs/Makefile
